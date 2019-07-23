@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Your Shopping Cart - &GIN</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="&GIN-Style.css">
+    <script>
+    if ((JSON.parse(localStorage.getItem('LScart'))).length === 0 ){
+        document.querySelector('.cartPageContent').innerHTML = "Your cart is empty."
+    }
+</script>
+    <style>
+body {
+    animation: colorchange 10s;     
+}
+
+@keyframes colorchange {
+      0%   {background: white;}
+      50%  {background: #f7f7f2;}
+      100% {background: white;}
+}
+h2 {
+    text-align: center;
+    margin-top: 60px;
+    letter-spacing: 3px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+label {
+	font-size: 12px;
+}
+td {
+   padding: 20px;
+   padding-left: 60px;
+}
+
+
+  </style>
+
+
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="col-xs-3 offset-xs-1">
+                <h1>&GIN</h1>
+            </div>
+            <div class="col-xs-4">
+                <img src="Images/&gin2.png" alt="color code" width="300" height="35" class="mx-auto d-block">
+            </div>
+            <div class="cart col-xs-1">
+              <a href="cart.html">
+                <img src="Images/cart1.png" width="31" id="cart"></a>
+            </div>
+            <div class="search-bar col-xs-1">
+                <input type="text" name="search" placeholder="search" id="search">
+            </div>
+        </div>
+        <hr>
+        <!----------------Nav Bar--------------->
+        <div class="container">
+            <nav class="navbar navbar-light col-md-12">
+                <div class="home">
+                    <a class="navbar-brand" href="home.html"> Home </a>
+                </div>
+                <div class="store">
+                    <a class="navbar-brand" href="store.html"> Store </a>
+                </div>
+                <div class="giftSets">
+                    <a class="navbar-brand" href="giftSets.html"> Gift Sets </a>
+                </div>
+                <div class="about">
+                    <a class="navbar-brand" href="about.html"> About </a>
+                </div>
+            </nav>
+        </div>
+</header>    
+<br>
+  <section class="container content-section">
+<h2>Your cart</h2>
+<div class="cartPageContent">
+   <table class="cartPageItemList">
+       <tr>
+           <td><h4>Product</h4></td>
+           <td><h4>Price</h4></td>
+           <td><h4>Qty</h4></td>
+       </tr>
+    </table>
+
+ <!-------------- TOTAL----------------->
+<hr>
+                <h5>Subtotal: <span class="totalQty"></span> item(s) , R <span class="totalAmount"></span>.00</h5>
+
+            <div class="cart-total">
+            <div class="radio">
+      			<label><input type="radio" name="optradio" required>I Accept the Terms <br> & Conditions</label>
+    		</div>
+            <a href="order.html">
+            <button class="btn btn-default btn-purchase" type="button">Buy!</button></a>
+
+
+          </div>
+</section>
+<br>
+<br>
+<br>
+<br>
+
+    <footer class="page-footer font-small mdb-color lighten-3 pt-2">
+        <div class="container text-center text-md-left">
+            <div class="row">
+                <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="contact.html" class="contact"> Contact us </a> </li>
+                        <li>
+                            <a href="shipping.html" class="shipping">Shipping and returns</a> </li>
+                        <li>
+                            <a href="reviews.html" class="reviews"> Customer Reviews </a> </li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-lg-6 mr-auto my-md-4 my-0 mt-4 mb-1">
+                    <div class="sign-up">
+                        <h5 class="font-weight-bold text-uppercase mb-4">Not sure what to purchase yet?</h5>
+                        <p>Join our mailing list to recieve exclusive offers and discounts.</p>
+                    </div>
+                    <div class="form-inline form-group">
+                        <input class="form-control" rows="1" placeholder="Email address" style=" box-shadow:none;"></input>
+                        <button type="submit" class="btn btn-default btn-md" id="submit"> SIGN UP </button></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+  <script src="&GIN.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</body>
+</html>

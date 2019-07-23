@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Order - &GIN</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="&GIN-Style.css">
+    <style>
+h2 {
+    text-align: left;
+    margin-top: 30px;
+    padding-bottom: 20px;
+    margin-left: 125px;
+}
+.box {
+    width: 200px;
+}
+
+h4 {
+    padding: 20px;
+    margin-left: -20px;
+}
+.btn {
+    margin-left: 30px;
+    background-color: #e4e6c3;
+}
+.delopt {
+    display: none;
+}
+#stand, #expr {
+    display:none;
+    margin-left:2px;
+}
+#deliv {
+    display: inline-table;
+}
+
+  </style>
+  <script>
+          $(document).ready(function(){
+        $("#Collect").click(function(){
+            $(".delopt").hide();
+});
+    $("#Delivery").click(function(){
+        $(".delopt").show();
+  });
+
+
+$("#standeliv").click(function(){
+  $("#stand").toggle();
+});
+
+$("#expdeliv").click(function(){
+  $("#expr").toggle();
+});
+
+});
+
+
+
+
+function myConfirm() {
+  alert("Your order has been confirmed." + " " + "Your reference number:" + " " + Math.floor(Math.random() * 86415151));
+}
+  </script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="col-xs-3 offset-xs-1">
+                <h1>&GIN</h1>
+            </div>
+            <div class="col-xs-4">
+                <img src="Images/&gin2.png" alt="color code" width="300" height="35" class="mx-auto d-block">
+            </div>
+            <div class="cart col-xs-1">
+              <a href="cart.html">
+                <img src="Images/cart1.png" alt="cart" width="31" id="cart"></a>
+            </div>
+            <div class="search-bar col-xs-1">
+                <input type="text" name="search" placeholder="search" id="search">
+            </div>
+        </div>
+        <hr>
+        <!----------------Nav Bar--------------->
+        <div class="container">
+            <nav class="navbar navbar-light col-md-12">
+                <div class="home">
+                    <a class="navbar-brand" href="home.html"> Home </a>
+                </div>
+                <div class="store">
+                    <a class="navbar-brand" href="store.html"> Store </a>
+                </div>
+                <div class="giftSets">
+                    <a class="navbar-brand" href="giftSets.html"> Gift Sets </a>
+                </div>
+                <div class="about">
+                    <a class="navbar-brand" href="about.html"> About </a>
+                </div>
+            </nav>
+        </div>
+</header>    
+<br>
+<section>
+
+<div class="wrapper clearfix" id="checkout">
+<form id="checkoutForm" name="checkoutForm" novalidate="" autocomplete="on">
+        <div id="leftCol">
+            <div class="hideonMediumGlass">
+                <div class="buttonInput">
+                    <input name="promoGiftCard" placeholder="Enter Promo Code" tabindex="1" type="text" class="ng-untouched ng-pristine ng-valid"><button class="button secondary-button" id="promoClear" type="button">Apply</button>
+                    <!---->
+                </div>
+
+                <p id="orderSummary">Order Summary</p>
+
+                <div class="box" id="summaryBox">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="left" >Items :</td>
+                                <td id="sTotal"></td>
+                            </tr>
+                            <!---->
+                            <!---->
+                            <!---->
+                            <tr>
+                                <td class="left" id="shipping">Shipping :</td>
+                                <td class="text-right">
+                                    <div id="deliv">
+                                <span id="stand"> R40.00</span>
+                                <span id="expr"> R80.00</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="left">Total :</td>
+                                <td class="text-right">R</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+      <h2 class="band-name band-name-large">Contact Information & Delivery</h2>
+    <div class="container order-form">
+        <h4 class="order-header">Contact information:</h4>
+        <form>
+            <div class="form-row">
+              <div class="form-group col-md-4">
+                    <input type="email" class="form-control" id="inputEmail4" placeholder="Email"></div>
+                </div>
+                <div class="form-row">
+              <div class="form-group col-md-4">
+                    <input type="text" class="form-control" id="inputPhoneNumber" placeholder="Phone Number (optional)">
+                </div>
+
+        </form>
+    </div>
+
+<div class="container">
+  <form>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" id="Collect"> Collect
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" id="Delivery"> Delivery
+    </label>
+  </form>
+</div>
+
+<div class="delopt">
+    <h4 class="order-header">Shipping Address: </h4>
+      <form>
+        <label class="radio-inline">
+            <input type="radio" name="optradio" id="expdeliv"> Express delivery <br>(R80.00).</label>
+        <label class="radio-inline">
+            <input type="radio" name="optradio" id="standeliv"> Standard delivery <br>(R40.00).</label>
+      </form>
+            <div class="form-row">
+              <div class="form-group col-md-2">
+                <input type="text" class="form-control" id="name" placeholder="First Name"></div>
+                <div class="form-group col-md-2">
+                <input type="text" class="form-control" id="surname" placeholder="Last Name">
+            </div>
+        </div>
+            <div class="form-row">
+            <div class="form-group col-md-5">
+              <input type="text" class="form-control" id="inputAddress" placeholder="Address"></div>
+            </div>
+            <div class="form-row">
+            <div class="form-group col-md-5">
+              <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, suite, etc.(optional)"></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-5">
+                <input type="text" class="form-control" id="inputCity" placeholder="City"></div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-2">
+                <input type="text" class="form-control" id="inputCountry" placeholder="Country"></div>
+              <div class="form-group col-md-2">
+                <select id="inputProvince" class="form-control">
+                  <option selected>Province</option>
+                  <option>...</option>
+                </select>
+              </div>
+              <div class="form-group col-md-1">
+                <input type="text" class="form-control" id="inputZip" placeholder="ZIP">
+              </div>
+          </div>
+
+          </div>
+    </div>
+        <div class="form-row">
+            <div class="form-group col-md-2 offset-md-4">
+                <a href="">
+                    <button class="btn btn-default" onclick="myConfirm()">Confirm</button></a>
+            </div>
+        </div>
+</section>
+
+<br>
+<br>
+<br>
+<br>
+
+
+
+    <footer class="page-footer font-small mdb-color lighten-3 pt-2">
+        <div class="container text-center text-md-left">
+            <div class="row">
+                <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="contact.html" class="contact"> Contact us </a> </li>
+                        <li>
+                            <a href="shipping.html" class="shipping">Shipping and returns</a> </li>
+                        <li>
+                            <a href="reviews.html" class="reviews"> Customer Reviews </a> </li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-lg-6 mr-auto my-md-4 my-0 mt-4 mb-1">
+                    <div class="sign-up">
+                        <h5 class="font-weight-bold text-uppercase mb-4">Not sure what to purchase yet?</h5>
+                        <p>Join our mailing list to recieve exclusive offers and discounts.</p>
+                    </div>
+                    <div class="form-inline form-group">
+                        <input class="form-control" rows="1" placeholder="Email address" style=" box-shadow:none;"></input>
+                        <button type="submit" class="btn btn-default btn-md" id="submit"> SIGN UP </button></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+  <script src="&GIN.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</body>
+
+</html>
